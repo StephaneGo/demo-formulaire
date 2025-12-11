@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Formulaire</title>
+</head>
+<body>
+    <h1>Bonjour<strong th:if="${personne} != null" th:text="${' ' + personne.prenom + ' ' + personne.nom}"></strong>,</h1>
+    <div th:unless="${personne} != null">
+        <h2>Veuillez vous identifier : </h2>
+        <form action="/demo-formulaire" method="post">
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" placeholder="Nom">
+            <label for="prenom">Prenom : </label>
+            <input type="text" name="prenom" id="prenom" placeholder="Prenom">
+            <label for="rue">Rue : </label>
+            <input type="text" name="rue" id="rue" placeholder="Prenom">
+
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+</body>
+</html>
